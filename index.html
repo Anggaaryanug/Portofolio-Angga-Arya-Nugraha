@@ -1,216 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portofolio Angga</title>
-
-    <!-- Google Font -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angga Arya Nugraha | Frontend Developer & UI Designer</title>
+    <meta name="description" content="Portfolio of Angga Arya Nugraha - IT Student, Frontend Developer & UI Designer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e3a8a",
+              secondary: "#1e40af",
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .profile-img {
+        transition: transform 0.3s ease;
+      }
+      .profile-img:hover {
+        transform: scale(1.05);
+      }
+      .skill-icon {
+        transition: all 0.3s ease;
+      }
+      .skill-icon:hover {
+        transform: translateY(-5px);
+      }
+      .project-card {
+        transition: all 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .typewriter {
+        border-right: 2px solid #1e3a8a;
+        animation: blink 0.75s step-end infinite;
+      }
+      @keyframes blink {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #1e3a8a;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <!-- NAV BAR -->
-
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
-      <div class="container">
-        <a class="navbar-brand" href="#">Angga Arya N</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#About">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#workExperience">Work Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#Project">Project</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
+  <body class="font-poppins bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="#" class="text-2xl font-bold text-primary">Angga<span class="text-gray-600">Arya</span></a>
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="hover:text-primary transition">Home</a>
+            <a href="#about" class="hover:text-primary transition">About</a>
+            <a href="#skills" class="hover:text-primary transition">Skills</a>
+            <a href="#experience" class="hover:text-primary transition">Experience</a>
+            <a href="#projects" class="hover:text-primary transition">Projects</a>
+            <a href="#contact" class="hover:text-primary transition">Contact</a>
+          </div>
+          <button class="md:hidden focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
         </div>
       </div>
     </nav>
 
-    <!-- HOME -->
-
-    <section class="home">
-      <div class="home-content">
-        <div class="photo">
-          <img src="img/foto.jpg" />
-        </div>
-
-        <div class="font">
-          <h3>Hi , Myself</h3>
-          <h1>Angga Arya Nugraha</h1>
-          <h3>And I'm <span class="multiple-text"></span></h3>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-
-    <section id="About">
-      <h1>About Me</h1>
-      <p>
-        Mahasiswa semester 6 Sistem Informasi di Universitas Kuningan yang memiliki ketertarikan dalam bidang IT ,Memiliki kemampuan dalam bidang public speaking ,kepemimpinan dan kerjasama dalam tim mudah beradapatasi dengan hal baru,
-        selama berkuliah saya mampu mengerjakan project membuat website dan mampu membuat design dengan pengalaman kerja sebagai Design Media Social serta mengikuti seminar yang terhubung dengan Sistem Informasi atau pun yang bersangkutan
-        denga IT.
-      </p>
-    </section>
-
-    <section id="Skill">
-      <h1>Skill</h1>
-
-      <div class="logo">
-        <img src="img/Html 5.png" alt="" />
-        <img src="img/Css.png" alt="" />
-        <img src="img/Js.png" alt="" />
-        <img src="img/Bootstrap.png" alt="" />
-        <img src="img/Figma.png" alt="" />
-        <img src="img/Davinci.png" alt="" />
-        <img src="img/Photoshop.png" alt="" />
-      </div>
-    </section>
-
-    <!-- WORK EXPERIENCE -->
-
-    <section id="workExperience">
-      <h1>Work Experience</h1>
-      <div class="exp">
-        <div class="exp1">
-          <h2>WillStore</h2>
-          <h4>Design Grafis</h4>
-          <p>
-            Membuat poster dengan tema event-event atau tema yang berkaitan dengan <br />
-            mobile legend yang sedang trending dan di publikasikan di akun sosial media seperti Instagram.
-          </p>
-          <h4>Customer Service</h4>
-          <p>• Melayani customer dengan baik dan ramah.</p>
-          <p>• Berkomunikasi dengan 100-150 customer per hari untuk memberikan informasi mengenai produk.</p>
-          <p>• Memberikan Solusi di tiap kendala yang di hadapi pelanggan dengan menggunakan Bahasa yang mudah di mengerti.</p>
-          <p>• Menjaga dan meningkatkan kepuasan kepada customer.</p>
-        </div>
-
-        <div class="exp2">
-          <h2>Romansa Media</h2>
-          <h4>Design Grafis</h4>
-          <p>Membuat sebuah landing page yang akan publikasikan di sebuah iklan seperti facebook ads, tiktok ads dll.</p>
-          <h4>Customer Servis</h4>
-          <p>• Berkomunikasi dengan 20-35 customer per hari untuk memberikan informasi mengenai produk.</p>
-          <p>• Memenuhi target penjualan per bulan sebesar 66%.</p>
-          <p>• Memberikan Solusi di tiap kendala yang di hadapi pelanggan dengan menggunakan Bahasa yang mudah di mengerti.</p>
-          <p>• Menjaga dan meningkatkan kepuasan kepada pelanggan.</p>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+      <div class="container mx-auto px-6 py-12 md:py-24">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-12 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-primary">Angga Arya Nugraha</span></h1>
+            <div class="text-2xl md:text-3xl mb-8">
+              <span class="typewriter" id="typewriter"></span>
+            </div>
+            <p class="text-lg mb-8 text-gray-600">Tech enthusiast and Information Systems graduate who loves turning ideas into smooth, intuitive web experiences.</p>
+            <div class="flex space-x-4">
+              <a href="#contact" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg transition">Contact Me</a>
+              <a href="#projects" class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg transition">View Projects</a>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <img src="img/foto.jpg" alt="Angga Arya Nugraha Profile Photo" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-primary profile-img shadow-lg" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECT -->
-
-    <section id="Project">
-      <h1>My Latest Project</h1>
-      <div class="container-card">
-        <div class="card">
-          <img src="img/perpustakaan.png" alt="" />
-          <div class="card-content">
-            <h3>Website Perpustakaan</h3>
-            <p>
-              Informasi Perpustakaan dengan Berbasis website dimana dalam website tersebut menyajikan infromasi data buku dan informasi anggota setiap meminjam buku, website perpustakaan ini hanya dapat di akses atau di Kelola oleh petugas
-              perpustakaan atau yang bertanggung jawab atas perpustakaan itu sendiri
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">About <span class="text-primary">Me</span></h2>
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+            <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+            <p class="text-gray-600 mb-6">
+              I am a fresh graduate in Information Systems from Universitas Kuningan with a strong interest in software testing, system analysis, and web development. I have experience as a Project Manager in web-based information system
+              development, which has made me familiar with system workflows, documentation, and collaboration with technical teams. I am also actively involved in collaborative projects, IT training, and seminars, and I possess strong
+              problem-solving skills, adaptability, and the ability to work in a structured manner, both independently and in a team.
             </p>
-          </div>
-        </div>
 
-        <div class="card">
-          <img src="img/ecommerce kue.png" alt="" />
-          <div class="card-content">
-            <h3>Website E-commerce</h3>
-            <p>
-              Website E-commerce ini menyajikan infromasi tentang prodak kue dan melayani pembelian kue secara online, website ini menggunakan multi level Dimana pada website ini bisa di akses oleh pembeli dan admin tokokue dimana admin
-              bisa mengubah produk yang tersedia dan tidak tersedia
-            </p>
           </div>
-        </div>
-
-        <div class="card">
-          <img src="img/dataBarang.png" alt="" />
-          <div class="card-content">
-            <h3>Aplikasi Pendataan Barang</h3>
-            <p>Aplikasi pengumpulan data bahan baku berbasis mobile Android yang diharapkan dapat meringankan karyawan atau pemilik toko dalam pendataan barang bahan baku kue agar meminimalisir Human Eror</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="img/webSI.png" alt="" />
-          <div class="card-content">
-            <h3>UI/UX Design</h3>
-            <p>UI di atas merupakan project saya dalam mengikuti perlombaan kampus dalam membuat UI prodi Sistem Informasi</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="img/design.png" alt="" />
-          <div class="card-content">
-            <h3>Poster</h3>
-            <p>Poster desain ini salah satu hasil dari mengerjakan jobdesk saat saya bekerja di willstore dengan menggunakan software Photosop dan beberapa poster lainnya saat diluar dari jobdesk</p>
+          <div class="md:w-1/2">
+            <div class="mb-8">
+              <h3 class="text-2xl font-semibold mb-4">Soft Skills</h3>
+              <div class="flex flex-wrap gap-3">
+                <span class="bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full">Teamwork</span>
+                <span class="bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full">Problem Solving</span>
+                <span class="bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full">Communication</span>
+                <span class="bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full">Time Management</span>
+                <span class="bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full">Adaptability</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-4">Hard Skills</h3>
+              <div class="flex flex-wrap gap-3">
+                <span class="bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full">UI/UX Design</span>
+                <span class="bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full">Frontend Development</span>
+                <span class="bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full">Responsive Design</span>
+                <span class="bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full">Version Control</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT  -->
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-primary">Skills</span></h2>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
+        <div class="flex flex-wrap justify-center gap-8">
+          <!-- HTML5 -->
+          <div class="flex flex-col items-center skill-icon w-28">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-2">
+              <i class="fab fa-html5 text-4xl text-orange-500"></i>
+            </div>
+            <span class="font-medium text-center">HTML5</span>
+          </div>
 
-      <div class="contact-content">
-        <div class="call-us">
-          <h5>Call us On</h5>
-          <h6>+628976002801</h6>
-        </div>
+          <!-- CSS3 -->
+          <div class="flex flex-col items-center skill-icon w-28">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-2">
+              <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
+            </div>
+            <span class="font-medium text-center">CSS3</span>
+          </div>
 
-        <div class="email">
-          <h5>Email us at</h5>
-          <h6>anggaaryanugrahaofficial@gmail.com</h6>
-        </div>
+          <!-- JavaScript -->
+          <div class="flex flex-col items-center skill-icon w-28">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-2">
+              <i class="fab fa-js text-4xl text-yellow-500"></i>
+            </div>
+            <span class="font-medium text-center">JavaScript</span>
+          </div>
 
-        <div class="sosial-media">
-          <h5>Sosial Media</h5>
-          <div class="icn-social">
-            <img src="img/Linkedin.png" class="Linkedin" alt="" />
-            <img src="img/Instagram.png" class="Instagram" alt="" />
-            <img src="img/Twitter.png" class="Twitter" alt="" />
-            <img src="img/Github.png" class="Github" alt="" />
+          <!-- Bootstrap -->
+          <div class="flex flex-col items-center skill-icon w-28">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-2">
+              <i class="fab fa-bootstrap text-4xl text-purple-500"></i>
+            </div>
+            <span class="font-medium text-center">Bootstrap</span>
+          </div>
+
+          <!-- Figma -->
+          <div class="flex flex-col items-center skill-icon w-28">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-2">
+              <i class="fab fa-figma text-4xl text-pink-500"></i>
+            </div>
+            <span class="font-medium text-center">Figma</span>
+          </div>
+
+          <!-- ReactJS -->
+          <div class="flex flex-col items-center skill-icon w-28">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-2">
+              <i class="fab fa-react text-4xl text-blue-500"></i>
+            </div>
+            <span class="font-medium text-center">ReactJs</span>
+          </div>
+
+          <div class="flex flex-col items-center skill-icon w-28">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-2">
+              <i class="fab fa-laravel text-4xl text-blue-500"></i>
+            </div>
+            <span class="font-medium text-center">Laravel</span>
+          </div>
+
+          <!-- TailwindCSS -->
+          <div class="flex flex-col items-center skill-icon w-28">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-2">
+              <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" class="w-10 h-10" />
+            </div>
+            <span class="font-medium text-center">TailwindCSS</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <h6 class="footer-text">Hak Cipta © Angga Arya Nugraha | Developed by Anggaaryanug</h6>
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Work <span class="text-primary">Experience</span></h2>
+        <div class="space-y-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+              <h3 class="text-xl font-semibold">Web Development & UI/UX</h3>
+              <span class="text-primary font-medium">Feb 2024 - Jun 2024 </span>
+            </div>
+            <p class="text-gray-600 mb-2">PT. Mitra Talenta Grup (Celerates ) x Kampus Merdeka</p>
+            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+              <li>Developed responsive web applications using React.js and ExpressJs</li>
+              <li>Collaborated with UX designers to implement pixel-perfect interfaces</li>
+              <li>Optimized code for performance and accessibility</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+              <h3 class="text-xl font-semibold">Customer Service</h3>
+              <span class="text-primary font-medium">Juli 2023 - Okt 2023</span>
+            </div>
+            <p class="text-gray-600 mb-2">Romansa Media</p>
+            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+              <li>Communicated with 20-35 customers per day to provide product information.</li>
+              <li>Meet the monthly sales target of 66%.</li>
+              <li>Maintain and increase customer satisfaction</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+              <h3 class="text-xl font-semibold">Graphic Design</h3>
+              <span class="text-primary font-medium">Dec 2022 - Mar 2023 </span>
+            </div>
+            <p class="text-gray-600 mb-2">WillStore</p>
+            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+              <li>Can complete content creation for 15 content feeds in 10 days</li>
+              <li>Create posters with the theme of events or themes related to trending mobile legend and publish them on social media accounts such as Instagram.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-primary">Projects</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md project-card">
+            <img src="img/legian.png" alt="E-commerce Website Project" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Web Dev & UI/UX</h3>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Laravel</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-md project-card">
+            <img src="img/zrent.png" alt="Task Management App Project" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Web Dev & UI/UX</h3>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">React.js</span>
+                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Express.js</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg overflow-hidden shadow-md project-card">
+            <img src="img/wiill.png" alt="Portfolio Website Project" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Grapchics Designer</h3>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Adobe Photosshop</span>
+                <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Express.js</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Get In <span class="text-primary">Touch</span></h2>
+
+        <div class="flex justify-center">
+          <div class="w-full md:w-3/4">
+            <h3 class="text-2xl font-semibold mb-6 text-center">Contact Information</h3>
+
+            <!-- Contact Items in Row -->
+            <div class="flex flex-wrap justify-center gap-6 mb-10">
+              <!-- Email -->
+              <div class="flex items-start w-full md:w-1/3 mr-4">
+                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-2">
+                  <i class="fas fa-envelope text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Email</h4>
+                  <a href="mailto:anggaaryanugrahaofficial@gmail.com" class="text-gray-600 hover:text-primary transition"> anggaaryanugrahaofficial@gmail.com </a>
+                </div>
+              </div>
+              <!-- Location -->
+              <div class="flex items-start w-full md:w-1/3 ml-7">
+                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                  <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Location</h4>
+                  <p class="text-gray-600">Kuningan, Indonesia</p>
+                </div>
+              </div>
+              <!-- Phone -->
+              <div class="flex items-start w-full md:w-1/3">
+                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                  <i class="fas fa-phone-alt text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Phone/WhatsApp</h4>
+                  <a href="https://wa.me/628976002801" class="text-gray-600 hover:text-primary transition"> +62 897-6002-801 </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <h3 class="text-2xl font-semibold mb-6 text-center">Social Media</h3>
+            <div class="flex justify-center space-x-4">
+              <a href="https://www.linkedin.com/in/angga-arya-nugraha" class="bg-primary bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition">
+                <i class="fab fa-linkedin-in text-primary text-xl"></i>
+              </a>
+              <a href="https://github.com/Anggaaryanug" class="bg-primary bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition">
+                <i class="fab fa-github text-primary text-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-xl font-bold mb-2">Angga Arya Nugraha</p>
+        <p class="mb-4">Frontend Developer & UI Designer</p>
+        <p class="text-sm opacity-80">© 2023 Angga Arya Nugraha. All rights reserved.</p>
+      </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-    <!-- Scroolreveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      // Typewriter effect
+      const typewriterElement = document.getElementById("typewriter");
+      const professions = ["Frontend Developer", "UI Designer", "IT Student"];
+      let i = 0;
+      let j = 0;
+      let currentProfession = [];
+      let isDeleting = false;
+      let isEnd = false;
 
-    <!-- TypedJs -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+      function typeWriter() {
+        isEnd = false;
+        typewriterElement.innerHTML = currentProfession.join("");
 
-    <!-- mainJs -->
-    <script src="main.js"></script>
+        if (i < professions.length) {
+          if (!isDeleting && j <= professions[i].length) {
+            currentProfession.push(professions[i][j]);
+            j++;
+            typewriterElement.innerHTML = currentProfession.join("");
+          }
+
+          if (isDeleting && j <= professions[i].length) {
+            currentProfession.pop();
+            j--;
+            typewriterElement.innerHTML = currentProfession.join("");
+          }
+
+          if (j == professions[i].length) {
+            isEnd = true;
+            isDeleting = true;
+          }
+
+          if (isDeleting && j === 0) {
+            currentProfession = [];
+            isDeleting = false;
+            i++;
+            if (i == professions.length) i = 0;
+          }
+        }
+        const speedUp = Math.random() * (80 - 50) + 50;
+        const normalSpeed = Math.random() * (300 - 200) + 200;
+        const time = isEnd ? 2000 : isDeleting ? speedUp : normalSpeed;
+        setTimeout(typeWriter, time);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(typeWriter, 1000);
+      });
+    </script>
   </body>
 </html>
